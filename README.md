@@ -22,7 +22,7 @@ The architectural design of this solution is leveraging the `Command` design pat
 - <b>BattleshipSimulatorApi</b>
   - This project is based on .Net core 3.1 web api runtime.
   - It provides RESTfull services to interact with the simulator .It has references to other projects and resolves the dependencies of Receiver :  `ISimulator`, Invoker: `IPlayer` classes
-  - `Swagger` and `FluentValidation`
+  - `Swagger` and `FluentValidation` configurations are  in this project as well.
 - <b>Battleship.UnitTest </b>
   - This is the unit test project. Unit test scenarios cover both happy and edge-case examples.
 
