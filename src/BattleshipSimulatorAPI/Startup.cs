@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json.Converters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,14 +27,16 @@ namespace BattleshipSimulatorAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(opt=> {
+                opt.SerializerSettings.Converters.Add(new StringEnumConverter());
+            });
 
             services.AddRouting(option =>
             {
                 option.LowercaseQueryStrings = true;
                 option.LowercaseUrls = true;
             });
-
+            
             services.ConfigureExternalDependencies();
             services.ResolveDependencies();
             services.ConfigureCORS();
@@ -49,10 +52,12 @@ namespace BattleshipSimulatorAPI
             }
 
             app.UseSwagger();
+          
             app.UseSwaggerUI(setup =>
             {
                 setup.SwaggerEndpoint("/swagger/v1/swagger.json", "Battleship API v1");
                 setup.RoutePrefix = string.Empty;
+               
             });
 
 

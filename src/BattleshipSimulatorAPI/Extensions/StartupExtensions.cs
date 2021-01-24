@@ -24,14 +24,16 @@ namespace BattleshipSimulatorAPI.Extensions
 
         public static void ConfigureExternalDependencies(this IServiceCollection services)
         {
-
             services.AddSwaggerGen(setup =>
             {
                 setup.SwaggerDoc("v1", new OpenApiInfo { Title = "Battleship API", Version = "v1" });
 
             });
 
-            
+            services.AddSwaggerGenNewtonsoftSupport();
+
+
+
             services.AddControllers().AddFluentValidation(fv =>
                 fv.RegisterValidatorsFromAssemblyContaining<SimulatorController>());
         }
