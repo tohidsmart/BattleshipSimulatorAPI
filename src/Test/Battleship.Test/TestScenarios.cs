@@ -29,9 +29,9 @@ namespace BattleShip.Test
 
 
         // <summary>
-        /// Users initiate the attack before creating the board
+        /// Users initiates the attack before creating the board
         /// The response success is false
-        /// The message is to create the board first
+        /// The shown message is to create the board first
         /// </summary>
         [TestMethod]
         public void Test1_RunAttack_BeforeCreateBoard()
@@ -50,7 +50,8 @@ namespace BattleShip.Test
 
         // <summary>
         /// Users call the Created board for first time
-        /// It is successfull
+        /// /// The response success is false
+        /// The shown message is to create the board first
         /// </summary>
         [TestMethod]
         public void Test2_RunCreateBoard()
@@ -68,9 +69,9 @@ namespace BattleShip.Test
 
 
         /// <summary>
-        /// The user call the Create Board
-        /// The user calls the Add BattleShipCommand
-        /// Batlteship is placed
+        /// The user calls the Create Board Command
+        /// The user calls the Add Add BattleShip Command
+        /// Battleship is placed
         /// </summary>
         [TestMethod]
         public void Test3_AddBattleShipToBoard()
@@ -87,13 +88,13 @@ namespace BattleShip.Test
         }
 
         /// <summary>
-        /// The user calls the Create Board
-        /// The user calls the Add BattleShipCommand with wrong parameters
-        /// The API return error message
+        /// The user calls the Create Board Command
+        /// The user calls the Add BattleShip Command with wrong parameters
+        /// The API returns error message
         /// 
         /// </summary>
         [TestMethod]
-        public void Test4_AddBatlteshipWithWrongHorizontalParameters()
+        public void Test4_AddBattleshipWithWrongHorizontalParameters()
         {
             //Arrange
             Player.Play(new CreateBoardCommand(Simulator), out _);
@@ -111,13 +112,13 @@ namespace BattleShip.Test
 
 
         /// <summary>
-        /// The user calls the Create Board
-        /// The user calls the Add BattleShipCommand with wrong vertical parameters
-        /// The API return error message
+        /// The user calls the Create Board Command
+        /// The user calls the Add BattleShip Command with wrong vertical parameters
+        /// The API returns error message
         /// 
         /// </summary>
         [TestMethod]
-        public void Test5_AddBatlteshipWithWrongVerticalParameters()
+        public void Test5_AddBattleshipWithWrongVerticalParameters()
         {
             //Arrange
             Player.Play(new CreateBoardCommand(Simulator), out _);
@@ -135,13 +136,13 @@ namespace BattleShip.Test
 
 
         /// <summary>
-        /// The user calls the Create Board
-        /// The user calls the Add BattleShipCommand with correct Horizontal parameters
-        /// The API return error message
+        /// The user calls the Create Board Command
+        /// The user calls the Add BattleShip Commands with correct Horizontal parameters
+        /// The API returns success message
         /// 
         /// </summary>
         [TestMethod]
-        public void Test6_AddBatlteshipWithCorrectHorizontalParameters()
+        public void Test6_AddBattleshipWithCorrectHorizontalParameters()
         {
             //Arrange
             Player.Play(new CreateBoardCommand(Simulator), out _);
@@ -158,13 +159,13 @@ namespace BattleShip.Test
         }
 
         /// <summary>
-        /// The user calls the Create Board
-        /// The user calls the Add BattleShipCommand with correct vertical parameters
-        /// The API return success message
+        /// The user calls the Create Board command
+        /// The user calls the Add BattleShip Command with correct vertical parameters
+        /// The API returns success message 
         /// 
         /// </summary>
         [TestMethod]
-        public void Test7_AddBatlteshipWithCorrectVerticalParameters()
+        public void Test7_AddBattleshipWithCorrectVerticalParameters()
         {
             //Arrange
             Player.Play(new CreateBoardCommand(Simulator), out _);
@@ -184,12 +185,12 @@ namespace BattleShip.Test
         /// <summary>
         /// The user calls the Create Board
         /// The user calls the Add BattleShipCommand with  vertical parameters
-        /// The user initiate an attack
-        /// The API return success message : Hit
+        /// The user initiates an attack
+        /// The API returns success message : Hit
         /// 
         /// </summary>
         [TestMethod]
-        public void Test8_AddBatlteship_StrikeAttack_AttackHit()
+        public void Test8_AddBattleship_StrikeAttack_AttackHit()
         {
             //Arrange
             Player.Play(new CreateBoardCommand(Simulator), out _);
@@ -209,14 +210,14 @@ namespace BattleShip.Test
 
 
         /// <summary>
-        /// The user calls the Create Board
+        /// The user calls the Create Board command
         /// The user calls the Add BattleShipCommand with  vertical parameters
-        /// The user initiate an attack
-        /// The API return success message : Miss
+        /// The user initiates an attack
+        /// The API return Miss message : Miss
         /// 
         /// </summary>
         [TestMethod]
-        public void Test9_AddBatlteship_StrikeAttack_AttackMiss()
+        public void Test9_AddBattleship_StrikeAttack_AttackMiss()
         {
             //Arrange
             Player.Play(new CreateBoardCommand(Simulator), out _);
@@ -236,14 +237,14 @@ namespace BattleShip.Test
 
 
         /// <summary>
-        /// The user calls the Create Board
-        /// The user calls the Add BattleShipCommand with vertical parameters
-        /// The user initiate an attack
-        /// The API return success message : Miss
+        /// The user calls the Create Board Command
+        /// The user calls the Add BattleShip Command with vertical parameters
+        /// The user initiates an attack
+        /// The API returns success message : Miss
         /// 
         /// </summary>
         [TestMethod]
-        public void Test91_AddBatlteship_StrikeAttack_AttackMiss()
+        public void Test91_AddBattleship_StrikeAttack_AttackMiss()
         {
             //Arrange
             Player.Play(new CreateBoardCommand(Simulator), out _);
